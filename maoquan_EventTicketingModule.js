@@ -3,14 +3,14 @@ const events = [
     {
         id: 1, title: "Concert A",
         category: "concert",
-        data: "2026-12-20",
+        date: "2026-12-20",
         venue: "Singapore Indoor Stadium",
         prices: {cat1: 228, cat2: 168, cat3: 108}
     },
         {
         id: 2, title: "Concert B",
         category: "concert",
-        data: "2026-12-20",
+        date: "2026-12-20",
         venue: "Singapore Indoor Stadium",
         prices: {cat1: 300, cat2: 200, cat3: 100}
     }
@@ -32,16 +32,29 @@ const users = [{
     points: 120
 }];
 
-function searchEvents(keyword)
+    //To search events by title or catgory
+    function searchEvent(keyword){
+        if (!keyword || keyword.trim() === ""){
+            return [],
+        }
+        const results = events.filter(event => 
+            event.title.toLowerCase().includes(keyword.toLowerCase()) || 
+            event.category.toLowerCase().includes(keyword.toLowerCase())
+     );
+        return results;
+    },
 
 
 module.exports = {
-    // Explain what function A does
-    functionA() {
-        return 1+2;
-    },
-    // Explain what function B does
-    functionB() {
-        console.log("Hello function B");
-    }
+    //To search events by title or catgory
+    searchEvent(),
+    //Get available seats for the event
+    getAvailableSeats(),
+    //Calculate ticket price and discounts
+    calculateTicketPrice(),
+    //Create booking to reserve a seat
+    bookTickets(),
+    //Retrieve user's booking history
+    getUserBooking(),
+    
 }
