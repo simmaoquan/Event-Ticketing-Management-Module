@@ -4,8 +4,15 @@ const events = [
         id: 1, title: "Concert A",
         category: "concert",
         data: "2026-12-20",
-        venue: "Singapore INdoor Stadium",
+        venue: "Singapore Indoor Stadium",
         prices: {cat1: 228, cat2: 168, cat3: 108}
+    },
+        {
+        id: 2, title: "Concert B",
+        category: "concert",
+        data: "2026-12-20",
+        venue: "Singapore Indoor Stadium",
+        prices: {cat1: 300, cat2: 200, cat3: 100}
     }
 ];
 
